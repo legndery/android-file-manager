@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+.DS_STORE
+src/vendor/platformtools/MAC/*
+src/vendor/platformtools/Windows/*
+src/vendor/platformtools/Linux/*

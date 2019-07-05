@@ -1,0 +1,22 @@
+{
+  "name": "android-file-manager",
+  "version": "1.0.0",
+  "description": "Android file manager, that can be used with Usb debugging mode on.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/legndery/android-file-manager.git"
+  },
+  "author": "Aritra Chakraborty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/legndery/android-file-manager/issues"
+  },
+  "homepage": "https://github.com/legndery/android-file-manager#readme",
+  "dependencies": {
+    "shelljs": "^0.8.3"
+  }
+}

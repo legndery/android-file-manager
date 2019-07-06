@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/legndery/android-file-manager#readme",
   "dependencies": {
+    "parse-listing": "^1.1.3",
     "shelljs": "^0.8.3"
   }
 }

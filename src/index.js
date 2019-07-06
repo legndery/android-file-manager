@@ -1,6 +1,15 @@
-const ConnectionManager = require('./modules/ConnectionManger');
+const ConnectionManager = require('./modules/connection/ConnectionManger');
+const l = console.log;
 
 const cManager = new ConnectionManager('MAC');
 console.log(cManager.getPath());
-console.log(cManager.attachedDevicesList());
-console.log(cManager.killServer());
+
+const devices = cManager.attachedDevicesList();
+l(JSON.stringify(devices, null, 4));
+
+const connection = cManager.connect(devices[0].id);
+const FileManager = require('./modules/FIleManager');
+const fileManager = new FileManager(connection);
+
+fileManager.ls().then(l);
+// console.log(cManager.killServer());

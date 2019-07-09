@@ -17,5 +17,13 @@ class ADBConnection {
     // FormError(execCmd);
     return execCmd;
   }
+
+  toJSON() {
+    const o = {
+      id: this.id,
+      path: this.path,
+    };
+    return JSON.stringify(o);
+  }
 }
 module.exports = ADBConnection;

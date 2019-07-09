@@ -1,14 +1,13 @@
-
-const device_routes = require('./device_router');
-
-
-///Only for JSDOC///////
+const deviceRoutes = require('./device-router');
+const explorerRoutes = require('./explorer-router');
+//  Only for JSDOC/////////
 const express = require('express')();
-/////////////////////////
+//  ///////////////////////
 
 /**
  * @param {express} app
  */
-module.exports = function(app){
-    app.use('/device', device_routes);
-}
+module.exports = function routes(app) {
+  app.use('/devices/explorer', explorerRoutes);
+  app.use('/devices', deviceRoutes);
+};

@@ -25,6 +25,12 @@ const Connection = (function labdaConn() {
       return this.connection;
     }
 
+    fromJSON(json) {
+      /** @type {{id, path}} */
+      const jObj = JSON.parse(json);
+      return this.connect(jObj.id);
+    }
+
     exec(silent, ...args) {
       const { exec } = shellJS;
       const { path: adbPath } = props.get(this);

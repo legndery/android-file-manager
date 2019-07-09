@@ -5,5 +5,20 @@ function FormError(shellJSOutput) {
     return true;
   }
 }
-
-module.exports.FormError = FormError;
+function WrapErrorOrData(err, { data, msg }) {
+  const retObj = {
+    success: false,
+    msg: '',
+    data: {},
+  };
+  if (err) {
+    retObj.msg = err.message;
+    retObj.data = err;
+  } else {
+    retObj.success = true;
+    retObj.msg = msg;
+    retObj.data = data;
+  }
+  return retObj;
+}
+module.exports = { FormError, WrapErrorOrData };

@@ -10,8 +10,9 @@ class FileManager {
     this.connection = connection;
   }
 
-  async ls() {
-    const listing = this.connection.exec(false, '"ls -l"');
+  async ls(path = '') {
+    const newPath = path ? `'${path}/'` : '';
+    const listing = this.connection.exec(false, `"ls -l ${newPath}"`);
     // console.log(listing);
     const parseEntriesPromise = util.promisify(listParser.parseEntries);
     return parseEntriesPromise(listing.stdout);

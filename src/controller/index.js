@@ -1,5 +1,5 @@
-const DeviceController = require('./device_controller');
-const DeviceExplorerController = require('./explorer_controller');
+const DeviceController = require('./device-controller');
+const DeviceExplorerController = require('./explorer-controller');
 
 module.exports = {
   DeviceController,

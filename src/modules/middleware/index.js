@@ -8,6 +8,8 @@ const session = require('express-session');
 function middleWare(app) {
   const sess = {
     secret: 'l3gnd3ry',
+    saveUninitialized: true,
+    resave: true,
     cookie: {},
   };
 

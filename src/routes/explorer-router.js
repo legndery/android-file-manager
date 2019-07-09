@@ -5,6 +5,6 @@ const { DeviceExplorerController } = require('../controller');
 
 // router.get('/', DeviceController.index);
 
-router.get('/ls', DeviceExplorerController.ls);
+router.get('/ls*', DeviceExplorerController.ls);
 
 module.exports = router;

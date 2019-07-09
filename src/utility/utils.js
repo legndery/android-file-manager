@@ -5,7 +5,7 @@ function FormError(shellJSOutput) {
     return true;
   }
 }
-function WrapErrorOrData(err, { data, msg }) {
+function WrapErrorOrData(err, success = {}) {
   const retObj = {
     success: false,
     msg: '',
@@ -16,8 +16,8 @@ function WrapErrorOrData(err, { data, msg }) {
     retObj.data = err;
   } else {
     retObj.success = true;
-    retObj.msg = msg;
-    retObj.data = data;
+    retObj.msg = success.msg || '';
+    retObj.data = success.data || '';
   }
   return retObj;
 }

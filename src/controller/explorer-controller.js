@@ -1,9 +1,10 @@
-const DeviceController = require('./device_controller');
+const DeviceController = require('./device-controller');
 
 class DeviceExplorerController {
   static async ls(req, res) {
     const fManager = DeviceController.checkForFileManager(req);
-    const data = await fManager.ls();
+    const urlPath = req.url.substr(3);
+    const data = await fManager.ls(urlPath || '');
     res.json(data);
   }
 }

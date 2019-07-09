@@ -26,6 +26,7 @@ const Connection = (function labdaConn() {
     }
 
     fromJSON(json) {
+      console.dir(json);
       /** @type {{id, path}} */
       const jObj = JSON.parse(json);
       return this.connect(jObj.id);

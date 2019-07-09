@@ -11,16 +11,18 @@ class DeviceController {
   static checkForFileManager(req) {
     let fManager = null;
     console.log(req.sessionID);
+    console.dir(STORE);
     if (STORE.FileManager[req.sessionID]) {
       fManager = STORE.FileManager[req.sessionID];
     } else {
       // get the session;
       const conn = req.session.connection;
+      console.log('-------------------------', conn);
       const connection = connectionManager.fromJSON(conn);
       fManager = new FileManager(connection);
       STORE.FileManager[req.sessionID] = fManager;
     }
-    // console.dir(STORE);
+    console.dir(STORE);
     return fManager;
   }
 
@@ -38,8 +40,10 @@ class DeviceController {
       // Set connection =====
       const connection = connectionManager.connect(req.params.id);
       // Save connection to Session
+      console.log('---here---');
       req.session.connection = connection.toJSON();
       // Save Filemanager instance to Store
+      console.log(req.sessionID);
       STORE.FileManager = STORE.FileManager || {};
       STORE.FileManager[req.sessionID] = new FileManager(connection);
       res.json({ msg: 'Success' });

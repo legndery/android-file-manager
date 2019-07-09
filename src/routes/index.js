@@ -1,8 +1,5 @@
 const deviceRoutes = require('./device-router');
 const explorerRoutes = require('./explorer-router');
-//  Only for JSDOC/////////
-const express = require('express')();
-//  ///////////////////////
 
 /**
  * @param {express} app

@@ -2,9 +2,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const session = require('express-session');
 
-//  Only for JSDOC/////////
-const express = require('express')();
-//  ///////////////////////
 /**
  * @param {express} app
  */

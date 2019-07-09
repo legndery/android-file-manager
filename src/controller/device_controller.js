@@ -20,7 +20,7 @@ class DeviceController {
       fManager = new FileManager(connection);
       STORE.FileManager[req.sessionID] = fManager;
     }
-    console.dir(STORE);
+    // console.dir(STORE);
     return fManager;
   }
 
